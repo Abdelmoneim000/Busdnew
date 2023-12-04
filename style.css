@@ -1,0 +1,208 @@
+/* style.css */
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    scroll-behavior: smooth;
+}
+
+.Introduction {
+    background-image: url('./assets/Rocket_2.jpg');
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    clip-path: path("M 0,0 L 0,650 Q 850,800 1650,630 L 2200,0 Z");
+}
+
+
+.container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+ul {
+    width: 60%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    margin-top: 4%;
+    margin-left: 2%;
+    margin-right: 4%;
+    display: flex;
+    align-items: center;
+    animation : Button-Move 3s;
+    transition: transform 0.5s ease;
+}
+
+a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    line-height: 1.5;
+}
+
+li:hover {
+    transform: translateY(-5px);
+}
+
+
+.Head-typo {
+    width: 30%;
+    margin-left: 8%;
+    margin-top: 15%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Head-typo h1 {
+    color: rgb(254, 254, 255);
+    animation: Opacity 5s;
+}
+
+
+.Head-typo p {
+    color: rgb(254, 254, 255);
+    animation: Opacity 7s;
+}
+
+.Head-typo button {
+    width: 15%;
+    height: 10%;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: Button-Move 7s;
+    transition: color 0.3s, background-color 0.3s; /* Add transition for smooth color change */
+}
+
+.Head-typo button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid #fff;
+    transition: transform 0.3s; /* Add transition for smooth transform */
+}
+
+.Head-typo button:hover {
+    color: #2e2d2d; /* Change text color on hover */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.Head-typo button:hover:before {
+    transform: scaleX(0); /* Hide the border on hover by scaling to 0 */
+}
+
+.section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+.section h1 {
+    font-weight: bold;
+}
+
+.section h4 {
+    color: #898787;
+}
+
+/* Add/modify this to your existing CSS file */
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 30%; /* Adjust the width as needed */
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.card-content {
+    display: flex;
+}
+
+.card-content img {
+    width: 40%; /* Adjust the width as needed */
+    height: auto;
+    object-fit: cover;
+}
+
+.text-content {
+    padding: 20px;
+}
+
+.text-content h2 {
+    color: #333;
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    color: #666;
+    font-size: 14px; /* Adjust the font size as needed */
+    line-height: 1.6;
+}
+
+.card-3 {
+    width: 60%; /* Adjust the width as needed */
+}
+
+.card-3 p {
+    font-size: 11px;
+}
+
+@keyframes Opacity {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes Button-Move {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity : 1;
+      transform: translateX(0px);
+    }
+}
