@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyF1wSs5MnLQ5I2dYHK1c6U3jRTt8eg32m" crossorigin="anonymous">
 </head>
 <body>
 
@@ -50,7 +51,9 @@
                 <img src="assets/time.jpg" alt="Card Image">
                 <div class="text-content">
                     <h2>Time investment</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>
+                        12 Hours Compound Timer, 4 Hours Withdraw Cooldown only and 48 Hours Rewards Accumulation Cut-Off. In addition to 10 Times Mandatory Compound Feature
+                    </p>
                 </div>
             </div>
         </div>
@@ -61,7 +64,9 @@
                 <img src="assets/money.jpg" alt="Card Image">
                 <div class="text-content">
                     <h2>Save money</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>
+                        8% Daily ~ 2920% APR, with 8% Referral Bonus & 4% Hire Bonus. The best way to earn money daily and invest in with minimal loss. All of this with us.
+                    </p>
                 </div>
             </div>
         </div>
@@ -100,24 +105,94 @@
     </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Set the initial background position to center
-    document.querySelectorAll(".Introduction").forEach(function(element) {
-        element.style.backgroundPosition = "center";
-    });
+<section class="User-Wallet">
+    <h1>Busd Dashboard</h1>
+    <div class="header-elements">
+        <div class="Info-Element">
+            <div class="header-element">
+            <i class="fa-brands fa-font-awesome" style="color: #353536;"></i>
+            <p>Iinitial Deposit</p>
+            <h4>-</h4>
+            <h4>BUSD</h4>
+            </div>
+            
+        </div>
+        <div class="Info-Element">
+            <div class="header-element">
+                <i class="fa-solid fa-money-bill-transfer" style="color: #353536;"></i>
+                <p>Total Deposit</p>
+                <h4>-</h4>
+                <h4>BUSD</h4>
+            </div>
+        </div>
+        <div class="Info-Element">
+            <div class="header-element">
+                <i class="fa-brands fa-sellcast" style="color: #353536;"></i>
+                <p>Sold Crops</p>
+                <h4>-</h4>
+                <h4>BUSD</h4>
+            </div>
+        </div>
+        <div class="Info-Element">
+            <div class="header-element">
+                <i class="fa-solid fa-user-group" style="color: #353536;"></i>
+                <p>Referral Rewards (-)</p>
+                <h4>-</h4>
+                <h4>BUSD</h4>
+            </div>
+        </div>
+    </div>
+    <div class="Busd-Cards">
+    <div class="Busd-Card">
+        <div class="Busd-Card-inside">
+            <div>
+                <h4>Hiring Example</h4>
+                <h5>100 BUSD gets you:</h5>
+                <p><i class="fa-solid fa-cart-shopping"></i> Farmers: 0</p>
+                <p><i class="fa-solid fa-coins"></i> Daily: 0 BUSD</p>
+            </div>
+            <div class="Busd-Card-Wallet">
+                <h4><i class="fa-solid fa-wallet"></i> Wallet</h4>
+                <p>0</p>
+                <p>BUSD</p>
+            </div>
+        </div>
+        <div>
+            <h3>Approve BUSD</h3>
+            <div class="input-wrapper">
+                <input type="number" id="approveInput" placeholder=" ">
+                <button>Approve BUSD</button>
+            </div>
+        </div>
+        <div>
+            <h3><i class="fa-solid fa-building-columns"></i> Deposit BUSD</h3>
+            <div class="input-wrapper">
+                <input type="number" id="approveInput2" placeholder=" ">
+                <button>Hire Farmers</button>
+            </div>
+        </div>    
+    </div>
+    <div class="Busd-Card" id="Busd-Card-2">
+        <h3><i class="fa-solid fa-cart-shopping"></i> - Farmers</h3>
+        <i class="fa-solid fa-arrow-down"></i>
+        <h3><i class="fa-solid fa-coins"></i> - CROPS</h3>
+        <h4>Estimate daily yield</h4>
+        <P>0 BUSD</P>
+        <h3><i class="fa-solid fa-clock"></i> Cart will be full in:</h3>
+        <p>--:--:--</p>
+        <h3><i class="fa-solid fa-rotate"></i> Compund count</h3>
+        <button style="opacity: 0.5; cursor:auto; width: 75%;">Collect Crops in --:--:--</button>
+        <button style="opacity: 0.5; cursor:auto; width: 75%;">Hire more Farmers</button>
+        <p><i class="fa-solid fa-percent"></i> Time until next hire bonus is activated:</p>
+        <p>--:--:--</p>
+    </div>
+    </div>
+    <p style="width: 60%; margin-top: 50px;">Every time you hire or re-hire Farmers after the time interval, the compound counter will increase and your hire bonus grows by -% (max +-%). Harvesting crops will reset your bonus to 0.</p>
+    <p><i class="fa-solid fa-exclamation"></i>  Earn -% when someone uses your referral link!</p>
+</section>
 
-    // Add scroll event listener
-    document.addEventListener("scroll", function() {
-        var scrollPosition = window.scrollY;
-        var parallaxValue = scrollPosition * 0.3;
-        document.querySelectorAll(".Introduction").forEach(function(element) {
-            element.style.backgroundPosition = "center " + (parallaxValue - (window.innerHeight + 1800) * 0.3) + "px";
-        });
-    });
-});
-
-</script>
+<script src="https://kit.fontawesome.com/f7529ca901.js" crossorigin="anonymous"></script>
+<script src="Events.js"></script>
 
 </body>
 </html>
