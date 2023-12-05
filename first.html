@@ -101,11 +101,22 @@
 </section>
 
 <script>
-document.addEventListener("scroll", function() {
-    var scrollPosition = window.scrollY;
-    var parallaxValue = scrollPosition * 0.5; // Adjust the multiplier for the parallax effect
-    document.querySelector(".Introduction").style.backgroundPosition = "center " + parallaxValue + "px";
+document.addEventListener("DOMContentLoaded", function() {
+    // Set the initial background position to center
+    document.querySelectorAll(".Introduction").forEach(function(element) {
+        element.style.backgroundPosition = "center";
+    });
+
+    // Add scroll event listener
+    document.addEventListener("scroll", function() {
+        var scrollPosition = window.scrollY;
+        var parallaxValue = scrollPosition * 0.3;
+        document.querySelectorAll(".Introduction").forEach(function(element) {
+            element.style.backgroundPosition = "center " + (parallaxValue - (window.innerHeight + 1800) * 0.3) + "px";
+        });
+    });
 });
+
 </script>
 
 </body>
