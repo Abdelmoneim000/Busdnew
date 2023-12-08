@@ -50,7 +50,7 @@ li {
     margin-right: 4%;
     display: flex;
     align-items: center;
-    animation : Button-Move 3s;
+    animation: Button-Move 3s;
     transition: transform 0.5s ease;
 }
 
@@ -195,7 +195,7 @@ li:hover {
 
 .User-Wallet {
     width: 100%;
-    height : 133vh;
+    height: 133vh;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -242,25 +242,31 @@ li:hover {
     left: 50%;
     width: 200px;
     height: 20px;
-    background-color: #fff; /* Match the card background color */
+    background-color: #fff;
+    /* Match the card background color */
     transform: translateX(-50%);
 }
 
 .Busd-Cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; /* Adjust as needed */
-    width: 50%; /* Ensure the cards take the full width */
-    height : fit-content;
+    justify-content: space-around;
+    /* Adjust as needed */
+    width: 50%;
+    /* Ensure the cards take the full width */
+    height: fit-content;
 }
 
 .Busd-Card {
-    width: 45%; /* Adjust the width as needed */
-    height: 100%; /* Adjust the height as needed */
+    width: 45%;
+    /* Adjust the width as needed */
+    height: 100%;
+    /* Adjust the height as needed */
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Add margin to separate Busd-Card */
+    margin-bottom: 20px;
+    /* Add margin to separate Busd-Card */
     margin-top: 3%;
     padding: 0 0 0 20px;
     display: flex;
@@ -273,7 +279,8 @@ li:hover {
     align-items: center;
 }
 
-#Busd-Card-2 p, h4 {
+#Busd-Card-2 p,
+h4 {
     padding: 3px;
     margin: 0;
 }
@@ -282,26 +289,33 @@ li:hover {
     width: 75%;
     height: 20px;
     border-radius: 5px;
-    border: 1px solid #ccc; /* Add a border for better visibility */
-    padding: 8px; /* Add padding for better spacing */
+    border: 1px solid #ccc;
+    /* Add a border for better visibility */
+    padding: 8px;
+    /* Add padding for better spacing */
 }
 
 /* Update the styling for the Busd-Card button */
 .Busd-Card button {
     width: 60%;
-    padding: 10px; /* Adjust padding for better spacing */
-    background-color: #3498db; /* Change to your preferred background color */
+    padding: 10px;
+    /* Adjust padding for better spacing */
+    background-color: #3498db;
+    /* Change to your preferred background color */
     color: #fff;
     cursor: pointer;
     border: none;
-    border-radius: 5px; /* Add rounded corners */
-    margin-top: 10px; /* Adjust margin for better spacing */
+    border-radius: 5px;
+    /* Add rounded corners */
+    margin-top: 10px;
+    /* Adjust margin for better spacing */
     transition: background-color 0.3s;
 }
 
 /* Style for the focused Busd-Card button */
 .Busd-Card button:hover {
-    background-color: #2980b9; /* Change to a slightly darker shade than the button color on hover */
+    background-color: #2980b9;
+    /* Change to a slightly darker shade than the button color on hover */
 }
 
 /* Add a box shadow to the Busd-Card button for a subtle lift */
@@ -313,7 +327,8 @@ li:hover {
 /* Style for the focused input field */
 .Busd-Card input:focus {
     outline: none;
-    border-color: #2e2d2d; /* Change border color on focus */
+    border-color: #2e2d2d;
+    /* Change border color on focus */
 }
 
 /* Move label to the top when input is focused or has content */
@@ -325,8 +340,8 @@ li:hover {
     pointer-events: none;
 }
 
-.Busd-Card input:focus + label,
-.Busd-Card input:not(:placeholder-shown) + label {
+.Busd-Card input:focus+label,
+.Busd-Card input:not(:placeholder-shown)+label {
     top: -15px;
     font-size: 12px;
 }
@@ -352,10 +367,95 @@ li:hover {
     padding: 0%;
 }
 
+/* ... (Your existing styles) */
+
+.faq-section {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    text-align: center;
+    opacity: 0; /* Initial opacity set to 0 for fade-in effect */
+    transform: translateY(20px); /* Initial position set for slide-in effect */
+    transition: opacity 1s, transform 1s;
+}
+
+.faq-section.is-visible {
+    /* Add styles for the visible state with animation */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-carousel {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    height: 70%;
+    margin: auto;
+}
+
+.faq-item {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    opacity: 0; /* Initial opacity set to 0 for fade-in effect */
+    transform: translateX(20px); /* Initial position set for slide-in effect */
+}
+
+.faq-item.is-visible {
+    /* Add styles for the visible state with animation */
+    width: 90%;
+    opacity: 1;
+    transform: translateX(0);
+    height: 100%;
+}
+
+.faq-item h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Updated button styling */
+.faq-section button {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+/* Style for the focused button */
+.faq-section button:hover {
+    background-color: #2980b9;
+}
+
+/* Add a box shadow to the button for a subtle lift */
+.faq-section button:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
 @keyframes Opacity {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes Button-Move {
@@ -363,8 +463,9 @@ li:hover {
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
-        opacity : 1;
+        opacity: 1;
         transform: translateX(0px);
     }
 }
