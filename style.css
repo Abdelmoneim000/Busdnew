@@ -36,6 +36,11 @@ nav {
     width: 100%;
 }
 
+.burger-icon {
+    opacity: 0;
+    display: none;
+}
+
 ul {
     width: 60%;
     list-style-type: none;
@@ -120,9 +125,8 @@ li:hover {
 
 .section {
     opacity: 0;
-    transform: translateY(20px);
     transition: opacity 1s, transform 1s;
-    position: relative;
+    transform: translateY(20px);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -134,6 +138,9 @@ li:hover {
 .section.is-visible {
     opacity: 1;
     transform: translateY(0);
+    /* Add styles for the visible state with animation */
+    width: 100%;
+    height: 100vh;
 }
 
 .section h1 {
@@ -157,7 +164,6 @@ li:hover {
     overflow: hidden;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
 }
-
 
 .card-content {
     display: flex;
@@ -194,15 +200,16 @@ li:hover {
 }
 
 .User-Wallet {
+    opacity: 0;
+    position: relative;
     width: 100%;
-    height: 133vh;
+    height: 100%;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 1s,transform 1s;
 }
 
 .User-Wallet.is-visible {
@@ -246,6 +253,7 @@ li:hover {
     /* Match the card background color */
     transform: translateX(-50%);
 }
+
 
 .Busd-Cards {
     display: flex;
@@ -308,6 +316,7 @@ h4 {
     border-radius: 5px;
     /* Add rounded corners */
     margin-top: 10px;
+    margin-bottom: 10px;
     /* Adjust margin for better spacing */
     transition: background-color 0.3s;
 }
@@ -322,7 +331,6 @@ h4 {
 .Busd-Card button:active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Style for the focused input field */
 .Busd-Card input:focus {
@@ -366,8 +374,6 @@ h4 {
     margin: 0%;
     padding: 0%;
 }
-
-/* ... (Your existing styles) */
 
 .faq-section {
     background-color: #f0f0f0;
@@ -448,6 +454,177 @@ h4 {
 }
 
 
+@media screen and (max-width: 400px) {
+
+    .Introduction {
+        background-image: url('./assets/Rocket_2.jpg');
+        position: relative;
+        width: 100%;
+        height: 600px; /* Adjust the height as needed */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column; /* Change flex-direction to column */
+        justify-content: center; /* Vertically center content */
+        align-items: center; /* Horizontally center content */
+        overflow: hidden;
+    }
+
+    ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1;
+        padding: 10px 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    li {
+        margin: 0;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #555;
+    }
+
+    li:last-child {
+        border-bottom: none;
+    }
+
+    li:hover {
+        background-color: #555;
+    }
+
+    .for_hover {
+        display: none;
+    }
+
+    .burger-icon {
+        opacity: 1;
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        margin-top: 10px;
+        color: #fff;
+    }
+
+    .container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Adjust styles for the Head-typo class to center text and button */
+    .Head-typo {
+        width: 80%; /* Adjust the width as needed */
+        text-align: center;
+    }
+
+    .Head-typo h1,
+    .Head-typo p,
+    .Head-typo button {
+        margin: 10px 20px 0px 0px; /* Add margin for spacing */
+    }
+
+    .Head-typo button {
+        width: 50%; /* Adjust the width as needed */
+        height: 40px;
+    }
+
+    .section h1 {
+        font-size: 24px;
+    }
+
+    section h4 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 90%;
+        margin: 10px 0;
+    }
+    
+    .card-3 {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column; /* Change flex-direction to column */
+        align-items: center; /* Horizontally center content */
+    }
+    
+    .card-content img {
+        width: 100%; /* Make the image take up the full width of the container */
+        height: auto;
+        object-fit: cover;
+        order: -1; /* Move the image to the top of the card */
+    }
+
+    .Busd-Cards {
+        width: fit-content;
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Change to auto height */
+    }
+
+    .Busd-Card {
+        width: 80%;
+        margin-top: 5%;
+        height: auto; /* Change to auto height */
+    }
+
+    .Busd-Card img {
+        width: 100%; /* Make the image responsive within the card */
+        height: auto;
+        object-fit: cover;
+    }
+
+    .section,
+    .User-Wallet {
+        opacity: 1;
+        width: 100%; /* Ensure full width on small screens */
+        margin: 20px 0; /* Add margin between sections for spacing */
+    }
+
+    .section {
+        height: auto; /* Change height to auto for dynamic content */
+    }
+
+    .User-Wallet {
+        margin-top: 20px; /* Add top margin to separate from the section */
+    }
+
+    .User-Wallet p {
+        text-align: center;
+    }
+
+    .Busd-Card-Wallet {
+        margin-top: 10px; /* Add margin for spacing */
+    }
+
+    .faq-carousel {
+        height: auto; /* Change to auto height */
+    }
+
+    .faq-item {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+
 @keyframes Opacity {
     0% {
         opacity: 0;
@@ -459,12 +636,12 @@ h4 {
 }
 
 @keyframes Button-Move {
-    from {
+    0% {
         opacity: 0;
         transform: translateX(-20px);
     }
 
-    to {
+    100% {
         opacity: 1;
         transform: translateX(0px);
     }

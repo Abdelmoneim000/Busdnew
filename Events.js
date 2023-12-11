@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
         var scrollPosition = window.scrollY;
         var parallaxValue = scrollPosition * 0.3;
         document.querySelectorAll(".Introduction").forEach(function (element) {
-            element.style.backgroundPosition = "center " + (parallaxValue - (window.innerHeight + 1800) * 0.3) + "px";
+
+            window.innerWidth > 400 ?
+                element.style.backgroundPosition = "center " + (parallaxValue - (window.innerHeight + 1800) * 0.3) + "px"
+                :
+                element.style.backgroundPosition = "center " + (parallaxValue - (window.innerHeight - 450) * 0.3) + "px";;
         });
     });
 
@@ -128,4 +132,42 @@ document.addEventListener("DOMContentLoaded", function () {
     showFaqItem(currentIndex);
 
     setInterval(nextFaqItem, 5000); // Change slide every 5 seconds
+
+    const burgerIcon = document.querySelector('.burger-icon');
+    const navLinks = document.querySelector('.for_hover');
+
+    burgerIcon.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevent the click event from propagating to the document body
+        if (navLinks.style.display === 'block') {
+            navLinks.style.display = 'none';
+        } else {
+            navLinks.style.display = 'block';
+        }
+    });
+
+    document.body.addEventListener('click', function () {
+        if(window.innerWidth < 400)
+        {
+            navLinks.style.display = 'none';
+        }
+    });
+
+    // Stop propagation when clicking inside the navigation to prevent hiding it
+    navLinks.addEventListener('click', function (event) {
+        event.stopPropagation();
+    });
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 400) {
+            navLinks.style.display = 'flex';
+        } else {
+            navLinks.style.display = 'none';
+        }
+    });
+
+    if (window.innerWidth > 400) {
+        navLinks.style.display = 'flex';
+    } else {
+        navLinks.style.display = 'none';
+    }
 });
